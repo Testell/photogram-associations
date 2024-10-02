@@ -2,7 +2,7 @@
 #
 # Table name: photos
 #
-#  id             :integer          not null, primary key
+#  id             :bigint           not null, primary key
 #  caption        :text
 #  comments_count :integer
 #  image          :string
@@ -14,6 +14,8 @@
 
 class Photo < ApplicationRecord
   validates(:poster, { :presence => true })
+
+  has_many(:comments, class_name: "Comment", foreign_key: "comment_id")
 
   # Association accessor methods to define:
   

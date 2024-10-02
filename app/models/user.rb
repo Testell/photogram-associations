@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id             :integer          not null, primary key
+#  id             :bigint           not null, primary key
 #  comments_count :integer
 #  likes_count    :integer
 #  private        :boolean
@@ -16,6 +16,8 @@ class User < ApplicationRecord
     :presence => true,
     :uniqueness => { :case_sensitive => false },
   })
+
+  has_many(:comments)
 
   # Association accessor methods to define:
   
