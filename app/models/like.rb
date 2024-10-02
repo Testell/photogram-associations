@@ -16,6 +16,8 @@ class Like < ApplicationRecord
     :uniqueness => { :scope => [:fan_id] }
   })
 
+  belongs_to(:photo)
+
   # Association accessor methods to define:
   
   ## Direct associations

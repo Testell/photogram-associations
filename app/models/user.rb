@@ -18,6 +18,7 @@ class User < ApplicationRecord
   })
 
   has_many(:comments)
+  has_many(:photos)
 
   # Association accessor methods to define:
   
